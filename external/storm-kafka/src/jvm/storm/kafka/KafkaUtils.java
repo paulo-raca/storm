@@ -225,6 +225,10 @@ public class KafkaUtils {
         } else {
             if (kafkaConfig.scheme instanceof StringMultiSchemeWithTopic) {
                 tups = ((StringMultiSchemeWithTopic)kafkaConfig.scheme).deserializeWithTopic(topic, payload);
+            if (kafkaConfig.scheme instanceof StringMultiSchemeWithTopic) {
+                tups = ((StringMultiSchemeWithTopic)kafkaConfig.scheme).deserializeWithTopic(topic, payload);
+            if (kafkaConfig.scheme instanceof MultiSchemeWithTopic) {
+                tups = ((MultiSchemeWithTopic)kafkaConfig.scheme).deserializeWithTopic(topic, payload);
             } else {
                 tups = kafkaConfig.scheme.deserialize(payload);
             }
